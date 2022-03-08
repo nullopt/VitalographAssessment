@@ -2,11 +2,11 @@
 -----
 
 ## Overview of improvements
-As this program relies on user input, I've focused my improvements on usability, with only a fraction of performance tradeoff (which is negligible in a real world application - see [BenchMarks](#benchmarks)).
-I've given the user more prompts for input and the program will continuously prompt them in the event their input is invalid.
-I've also given the developer(s) the option to pass values directly to the `CaesarShift` function which can now be used in a library. This removes it from the `Main` entry point and provides more expandability.
-The code is now fully commented which will allow other developers working on the project a good idea of what each line does. This is exceptionally important within group projects as every developer will have a slightly different way of coding and logic; code for other's, not just for yourself.
-Another way to increase usability, expandability and maintainability is by taking the *magic* numbers out of the function scope and creating constant variables which makes it easier to upgrade the program as anyone will be able to see them easily at the top of the class.
+As this program relies on user input, I've focused my improvements on usability, with only a fraction of performance tradeoff (which is negligible in a real world application - see [BenchMarks](#benchmarks)).  
+I've given the user more prompts for input and the program will continuously prompt them in the event their input is invalid.  
+I've also given the developer(s) the option to pass values directly to the `CaesarShift` function which can now be used in a library. This removes it from the `Main` entry point and provides more expandability.  
+The code is now fully commented which will allow other developers working on the project a good idea of what each line does. This is exceptionally important within group projects as every developer will have a slightly different way of coding and logic; code for other's, not just for yourself.  
+Another way to increase usability, expandability and maintainability is by taking the *magic* numbers out of the function scope and creating constant variables which makes it easier to upgrade the program as anyone will be able to see them easily at the top of the class.  
 
 ## BenchMarks
 Below are the results from the benchmarking done on both functions over 10,000 iterations:
