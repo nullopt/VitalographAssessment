@@ -3,19 +3,19 @@ using System.Linq;
 
 namespace Encryption.CaesarCipher
 {
-    public class Program
-    {
+	public class Program
+	{
 		// total amount of characters in usable set (a-z = 26)
 		private const int TOTAL_CHARACTERS = 26;
 		// minimum ascii code (A = 65)
-        private const int MINIMUM_CHAR = 65;
+		private const int MINIMUM_CHAR = 65;
 		// maximum ascii code (Z = 90)
-        private const int MAXIMUM_CHAR = 90;
+		private const int MAXIMUM_CHAR = 90;
 
-        public static void Main(string[] args)
-        {
+		public static void Main(string[] args)
+		{
 			// ask the user for an input string to encrypt
-            var input = GetInputString();
+			var input = GetInputString();
 			Console.WriteLine($"User Input:            {input}");
 
 			// ask the user for a number to shift the cipher by
@@ -23,10 +23,10 @@ namespace Encryption.CaesarCipher
 			Console.WriteLine($"Shift Amount:          {shiftAmount}");
 
 			// pass the upper version of input to CaesarShift and store into output
-            var output = CaesarShift(input, shiftAmount);
+			var output = CaesarShift(input, shiftAmount);
 			
-            Console.WriteLine($"Caesar Shifted Output: {output}");
-        }
+			Console.WriteLine($"Caesar Shifted Output: {output}");
+		}
 		
 		/// <summary>
 		/// Continuously asks the user for an input string until the input string is valid.
@@ -88,21 +88,21 @@ namespace Encryption.CaesarCipher
 		///		number between 1 - 25 which is used to shift each character's ascii code
 		/// </param>
 		/// <returns></returns>
-        private static string CaesarShift(string input, int shiftAmount)
-        {
-            if (string.IsNullOrEmpty(input))
-            {
-                throw new ArgumentNullException("input cannot be empty or null.");
-            }
+		private static string CaesarShift(string input, int shiftAmount)
+		{
+			if (string.IsNullOrEmpty(input))
+			{
+				throw new ArgumentNullException("input cannot be empty or null.");
+			}
 
-            var output = string.Empty;
+			var output = string.Empty;
 
-            foreach (var character in input)
-            {				
+			foreach (var character in input)
+			{				
 				output += (char)((((character + shiftAmount) - MINIMUM_CHAR) % TOTAL_CHARACTERS) + MINIMUM_CHAR);
-            }
+			}
 			
 			return output;
-        }
-    }
+		}
+	}
 }
