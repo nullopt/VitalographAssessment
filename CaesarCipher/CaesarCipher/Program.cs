@@ -61,7 +61,7 @@ namespace CaesarCipher
 			}
 
 			// return the capitalized version
-			return inputString;
+			return inputString.ToUpper();
 		}
 
 		/// <summary>
